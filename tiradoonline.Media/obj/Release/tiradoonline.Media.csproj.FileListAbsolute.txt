@@ -1,0 +1,8 @@
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Media\bin\Release\tiradoonline.Media.exe.config
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Media\bin\Release\tiradoonline.Media.exe
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Media\bin\Release\tiradoonline.Media.pdb
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Media\bin\Release\tiradoonline.DataAccess.dll
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Media\bin\Release\tiradoonline.DataAccess.pdb
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Media\obj\Release\tiradoonline.Media.csprojResolveAssemblyReference.cache
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Media\obj\Release\tiradoonline.Media.exe
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Media\obj\Release\tiradoonline.Media.pdb

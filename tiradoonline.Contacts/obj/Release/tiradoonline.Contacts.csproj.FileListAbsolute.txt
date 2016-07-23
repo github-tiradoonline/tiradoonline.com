@@ -1,0 +1,2 @@
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Contacts\obj\Release\tiradoonline.Contacts.csprojResolveAssemblyReference.cache
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Contacts\obj\Release\tiradoonline.Contacts.csproj.ResolveComReference.cache

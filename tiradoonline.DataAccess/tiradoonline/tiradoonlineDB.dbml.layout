@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="tiradoonlineDBDataContext">
+  <DataContextMoniker Name="/tiradoonlineDBDataContextDataContext" />
+  <nestedChildShapes>
+    <classShape Id="04a3ee14-44da-4f7d-8fa2-dbb1de0cb045" absoluteBounds="0.75, 5.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/tiradoonlineDBDataContextDataContext/Country" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0c44420b-e8e8-4de4-9bdc-949b078e08e5" absoluteBounds="0.76499999999999968, 6.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="93032eb7-5127-4ad3-a4d2-cad60bf7de9a" absoluteBounds="3.75, 5.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/tiradoonlineDBDataContextDataContext/Language" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a561d783-2f55-4342-8038-d8b96d79a088" absoluteBounds="3.765, 6.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9fb195b9-820c-478e-ab61-9db621f5e83d" absoluteBounds="0.75, 2, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/tiradoonlineDBDataContextDataContext/State" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bae3d1f3-19e8-4f25-b69b-cda43ad72b28" absoluteBounds="0.76500000000000012, 2.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4732a381-3964-4758-86dc-342ef27aba82" absoluteBounds="3.5, 1, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/tiradoonlineDBDataContextDataContext/ZipCode" />
+      <nestedChildShapes>
+        <elementListCompartment Id="05197aca-587d-4005-96ca-335c0b3c959e" absoluteBounds="3.515, 1.46, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 2.69314697265625); (3.5 : 2.69314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/tiradoonlineDBDataContextDataContext/State/State_ZipCode" />
+      <nodes>
+        <classShapeMoniker Id="9fb195b9-820c-478e-ab61-9db621f5e83d" />
+        <classShapeMoniker Id="4732a381-3964-4758-86dc-342ef27aba82" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

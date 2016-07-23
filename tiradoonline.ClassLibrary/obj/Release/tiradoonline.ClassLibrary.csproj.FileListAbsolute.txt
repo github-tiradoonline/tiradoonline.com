@@ -1,0 +1,11 @@
+C:\Storage\Projects\tiradoonline.com\tiradoonline.ClassLibrary\obj\Release\tiradoonline.ClassLibrary.csprojResolveAssemblyReference.cache
+C:\Storage\Projects\tiradoonline.com\tiradoonline.ClassLibrary\obj\Release\tiradoonline.ClassLibrary.csproj.ResolveComReference.cache
+C:\Storage\Projects\tiradoonline.com\tiradoonline.ClassLibrary\bin\Release\tiradoonline.ClassLibrary.dll
+C:\Storage\Projects\tiradoonline.com\tiradoonline.ClassLibrary\bin\Release\tiradoonline.ClassLibrary.pdb
+C:\Storage\Projects\tiradoonline.com\tiradoonline.ClassLibrary\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Storage\Projects\tiradoonline.com\tiradoonline.ClassLibrary\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Storage\Projects\tiradoonline.com\tiradoonline.ClassLibrary\obj\Release\tiradoonline.ClassLibrary.dll
+C:\Storage\Projects\tiradoonline.com\tiradoonline.ClassLibrary\obj\Release\tiradoonline.ClassLibrary.pdb
+C:\Storage\Projects\tiradoonline.com\tiradoonline.ClassLibrary\bin\Release\OpenPop.dll
+C:\Storage\Projects\tiradoonline.com\tiradoonline.ClassLibrary\bin\Release\tiradoonline.Models.exe
+C:\Storage\Projects\tiradoonline.com\tiradoonline.ClassLibrary\bin\Release\tiradoonline.Models.pdb

@@ -1,0 +1,11 @@
+C:\Storage\Projects\tiradoonline.com\tiradoonline.WebBrowser\bin\Debug\tiradoonline.WebBrowser.exe.config
+C:\Storage\Projects\tiradoonline.com\tiradoonline.WebBrowser\bin\Debug\tiradoonline.WebBrowser.exe
+C:\Storage\Projects\tiradoonline.com\tiradoonline.WebBrowser\bin\Debug\tiradoonline.WebBrowser.pdb
+C:\Storage\Projects\tiradoonline.com\tiradoonline.WebBrowser\obj\Debug\tiradoonline.WebBrowser.csprojResolveAssemblyReference.cache
+C:\Storage\Projects\tiradoonline.com\tiradoonline.WebBrowser\obj\Debug\tiradoonline.WebBrowser.WebBrowser.resources
+C:\Storage\Projects\tiradoonline.com\tiradoonline.WebBrowser\obj\Debug\tiradoonline.WebBrowser.Properties.Resources.resources
+C:\Storage\Projects\tiradoonline.com\tiradoonline.WebBrowser\obj\Debug\tiradoonline.WebBrowser.csproj.GenerateResource.Cache
+C:\Storage\Projects\tiradoonline.com\tiradoonline.WebBrowser\obj\Debug\tiradoonline.WebBrowser.exe
+C:\Storage\Projects\tiradoonline.com\tiradoonline.WebBrowser\obj\Debug\tiradoonline.WebBrowser.pdb
+C:\Storage\Projects\tiradoonline.com\tiradoonline.WebBrowser\bin\Debug\Skybound.Gecko.dll
+C:\Storage\Projects\tiradoonline.com\tiradoonline.WebBrowser\bin\Debug\Skybound.Gecko.xml

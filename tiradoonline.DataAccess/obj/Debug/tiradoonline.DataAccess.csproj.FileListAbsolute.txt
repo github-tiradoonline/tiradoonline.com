@@ -1,0 +1,10 @@
+c:\storage\projects\tiradoonline.com\tiradoonline.DataAccess\bin\Debug\tiradoonline.DataAccess.dll.config
+c:\storage\projects\tiradoonline.com\tiradoonline.DataAccess\bin\Debug\tiradoonline.DataAccess.dll
+c:\storage\projects\tiradoonline.com\tiradoonline.DataAccess\bin\Debug\tiradoonline.DataAccess.pdb
+c:\storage\projects\tiradoonline.com\tiradoonline.DataAccess\obj\Debug\tiradoonline.DataAccess.dll
+c:\storage\projects\tiradoonline.com\tiradoonline.DataAccess\obj\Debug\tiradoonline.DataAccess.pdb
+C:\Storage\Projects\tiradoonline.com\tiradoonline.DataAccess\bin\Debug\EntityFramework.dll
+C:\Storage\Projects\tiradoonline.com\tiradoonline.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Storage\Projects\tiradoonline.com\tiradoonline.DataAccess\bin\Debug\EntityFramework.xml
+C:\Storage\Projects\tiradoonline.com\tiradoonline.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Storage\Projects\tiradoonline.com\tiradoonline.DataAccess\obj\Debug\tiradoonline.DataAccess.csprojResolveAssemblyReference.cache

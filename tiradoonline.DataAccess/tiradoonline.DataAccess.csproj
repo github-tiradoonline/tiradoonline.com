@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7E404D91-D1AF-455B-9495-15358D67F404}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>tiradoonline.DataAccess</RootNamespace>
+    <AssemblyName>tiradoonline.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="InterviewQuestionsAnswers\Models\Answers.cs" />
+    <Compile Include="InterviewQuestionsAnswers\InterviewQuestionsAnswersContext.cs" />
+    <Compile Include="InterviewQuestionsAnswers\Models\Questions.cs" />
+    <Compile Include="InterviewQuestionsAnswers\Models\Subjects.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="tiradoonline\Models\AreaCodes.cs" />
+    <Compile Include="tiradoonline\Models\Artists.cs" />
+    <Compile Include="tiradoonline\Models\Backups.cs" />
+    <Compile Include="tiradoonline\Models\Banking.cs" />
+    <Compile Include="tiradoonline\Models\BankingAccount.cs" />
+    <Compile Include="tiradoonline\Models\BankingAccountEmail.cs" />
+    <Compile Include="tiradoonline\Models\BankingAccountLinked.cs" />
+    <Compile Include="tiradoonline\Models\BankingAccountLinked_old.cs" />
+    <Compile Include="tiradoonline\Models\BankingEmail.cs" />
+    <Compile Include="tiradoonline\Models\BankingMonthlyExpense.cs" />
+    <Compile Include="tiradoonline\Models\BankingMonthlyExpense_deleted.cs" />
+    <Compile Include="tiradoonline\Models\BankingMonthlyExpense_updated.cs" />
+    <Compile Include="tiradoonline\Models\BloodPressure.cs" />
+    <Compile Include="tiradoonline\Models\CCBalance.cs" />
+    <Compile Include="tiradoonline\Models\Collection.cs" />
+    <Compile Include="tiradoonline\Models\CollectionAgency.cs" />
+    <Compile Include="tiradoonline\Models\Companies.cs" />
+    <Compile Include="tiradoonline\Models\Contacts.cs" />
+    <Compile Include="tiradoonline\Models\ContactsOutlookExport.cs" />
+    <Compile Include="tiradoonline\Models\Countries.cs" />
+    <Compile Include="tiradoonline\Models\CreditCard.cs" />
+    <Compile Include="tiradoonline\Models\CreditCardPayment.cs" />
+    <Compile Include="tiradoonline\Models\CreditCard_deleted.cs" />
+    <Compile Include="tiradoonline\Models\CreditCard_old.cs" />
+    <Compile Include="tiradoonline\Models\CreditCard_updated.cs" />
+    <Compile Include="tiradoonline\Models\Doctor.cs" />
+    <Compile Include="tiradoonline\Models\Emails.cs" />
+    <Compile Include="tiradoonline\Models\EmailTemplates.cs" />
+    <Compile Include="tiradoonline\Models\ExecutedSQLScripts.cs" />
+    <Compile Include="tiradoonline\Models\FilteredBrowsers.cs" />
+    <Compile Include="tiradoonline\Models\FilteredIPAddresses.cs" />
+    <Compile Include="tiradoonline\Models\Genre.cs" />
+    <Compile Include="tiradoonline\Models\HeartRate.cs" />
+    <Compile Include="tiradoonline\Models\Hospital.cs" />
+    <Compile Include="tiradoonline\Models\HospitalPosition.cs" />
+    <Compile Include="tiradoonline\Models\HospitalStaff.cs" />
+    <Compile Include="tiradoonline\Models\Hours.cs" />
+    <Compile Include="tiradoonline\Models\Insulin.cs" />
+    <Compile Include="tiradoonline\Models\JobCompany.cs" />
+    <Compile Include="tiradoonline\Models\JobCompanyAddress.cs" />
+    <Compile Include="tiradoonline\Models\JobCompanyContact.cs" />
+    <Compile Include="tiradoonline\Models\JobCompanyPhoneCall.cs" />
+    <Compile Include="tiradoonline\Models\JobCompanyPhoneCallType.cs" />
+    <Compile Include="tiradoonline\Models\JobCoverLetter.cs" />
+    <Compile Include="tiradoonline\Models\JobEmail.cs" />
+    <Compile Include="tiradoonline\Models\JobInterview.cs" />
+    <Compile Include="tiradoonline\Models\JobInterviewType.cs" />
+    <Compile Include="tiradoonline\Models\JobQueue.cs" />
+    <Compile Include="tiradoonline\Models\Jobs.cs" />
+    <Compile Include="tiradoonline\Models\JobSalaryType.cs" />
+    <Compile Include="tiradoonline\Models\Languages.cs" />
+    <Compile Include="tiradoonline\Models\Logins.cs" />
+    <Compile Include="tiradoonline\Models\Logs.cs" />
+    <Compile Include="tiradoonline\Models\Lyric.cs" />
+    <Compile Include="tiradoonline\Models\LyricType.cs" />
+    <Compile Include="tiradoonline\Models\MediaFile.cs" />
+    <Compile Include="tiradoonline\Models\MediaFileDirectory.cs" />
+    <Compile Include="tiradoonline\Models\Medicine.cs" />
+    <Compile Include="tiradoonline\Models\MedicineDose.cs" />
+    <Compile Include="tiradoonline\Models\MedicineDosePackage.cs" />
+    <Compile Include="tiradoonline\Models\MedicineDosePackageItem.cs" />
+    <Compile Include="tiradoonline\Models\MedicineRefill.cs" />
+    <Compile Include="tiradoonline\Models\MonthlyBills.cs" />
+    <Compile Include="tiradoonline\Models\Movies.cs" />
+    <Compile Include="tiradoonline\Models\Notes.cs" />
+    <Compile Include="tiradoonline\Models\Oxygen.cs" />
+    <Compile Include="tiradoonline\Models\PageLogs.cs" />
+    <Compile Include="tiradoonline\Models\Paychecks.cs" />
+    <Compile Include="tiradoonline\Models\PersonalDays.cs" />
+    <Compile Include="tiradoonline\Models\PersonalInformation.cs" />
+    <Compile Include="tiradoonline\Models\PersonalInformationCards.cs" />
+    <Compile Include="tiradoonline\Models\Pharmacy.cs" />
+    <Compile Include="tiradoonline\Models\PhoneBill.cs" />
+    <Compile Include="tiradoonline\Models\PhoneBillAccount.cs" />
+    <Compile Include="tiradoonline\Models\PhoneBillGovernmentFeesTaxes.cs" />
+    <Compile Include="tiradoonline\Models\PhoneBillMonthlyCharges.cs" />
+    <Compile Include="tiradoonline\Models\PhoneBillMonthlyDataCharges.cs" />
+    <Compile Include="tiradoonline\Models\PhoneBillPhoneBillAccount.cs" />
+    <Compile Include="tiradoonline\Models\PhoneBillProvider.cs" />
+    <Compile Include="tiradoonline\Models\PhoneBillSurchargesOtherFees.cs" />
+    <Compile Include="tiradoonline\Models\PhoneDevice.cs" />
+    <Compile Include="tiradoonline\Models\POP3Email.cs" />
+    <Compile Include="tiradoonline\Models\POP3EmailAccount.cs" />
+    <Compile Include="tiradoonline\Models\POP3EmailFolder.cs" />
+    <Compile Include="tiradoonline\Models\POP3EmailRule.cs" />
+    <Compile Include="tiradoonline\Models\RecoveryCounselors.cs" />
+    <Compile Include="tiradoonline\Models\RecoveryDrugTest.cs" />
+    <Compile Include="tiradoonline\Models\RecoveryDrugTestType.cs" />
+    <Compile Include="tiradoonline\Models\RecoveryGroups.cs" />
+    <Compile Include="tiradoonline\Models\RecoveryGroupSessions.cs" />
+    <Compile Include="tiradoonline\Models\RecoveryPrograms.cs" />
+    <Compile Include="tiradoonline\Models\RecoveryTypes.cs" />
+    <Compile Include="tiradoonline\Models\ReferencedBy.cs" />
+    <Compile Include="tiradoonline\Models\Reminders.cs" />
+    <Compile Include="tiradoonline\Models\ResumeAnonymous.cs" />
+    <Compile Include="tiradoonline\Models\ResumeDownloads.cs" />
+    <Compile Include="tiradoonline\Models\ResumeDownloadType.cs" />
+    <Compile Include="tiradoonline\Models\ResumeFile.cs" />
+    <Compile Include="tiradoonline\Models\ResumeQueue.cs" />
+    <Compile Include="tiradoonline\Models\ResumeText.cs" />
+    <Compile Include="tiradoonline\Models\Server.cs" />
+    <Compile Include="tiradoonline\Models\ServerInformation.cs" />
+    <Compile Include="tiradoonline\Models\ServerProject.cs" />
+    <Compile Include="tiradoonline\Models\Sessions.cs" />
+    <Compile Include="tiradoonline\Models\Settings.cs" />
+    <Compile Include="tiradoonline\Models\SickDays.cs" />
+    <Compile Include="tiradoonline\Models\SnippetFolderImport.cs" />
+    <Compile Include="tiradoonline\Models\SnippetGroups.cs" />
+    <Compile Include="tiradoonline\Models\SnippetImport.cs" />
+    <Compile Include="tiradoonline\Models\Snippets.cs" />
+    <Compile Include="tiradoonline\Models\SQLScripts.cs" />
+    <Compile Include="tiradoonline\Models\States.cs" />
+    <Compile Include="tiradoonline\Models\Sugar.cs" />
+    <Compile Include="tiradoonline\Models\TableRows.cs" />
+    <Compile Include="tiradoonline\Models\Task.cs" />
+    <Compile Include="tiradoonline\Models\TaskProject.cs" />
+    <Compile Include="tiradoonline\Models\TaxRate.cs" />
+    <Compile Include="tiradoonline\Models\Temperature.cs" />
+    <Compile Include="tiradoonline\Models\Test.cs" />
+    <Compile Include="tiradoonline\Models\TestResult.cs" />
+    <Compile Include="tiradoonline\Models\TestType.cs" />
+    <Compile Include="tiradoonline\Models\TextMessage.cs" />
+    <Compile Include="tiradoonline\Models\Timesheet.cs" />
+    <Compile Include="tiradoonline\Models\TimesheetCompany.cs" />
+    <Compile Include="tiradoonline\Models\TimesheetDetail.cs" />
+    <Compile Include="tiradoonline\Models\TimesheetPayment.cs" />
+    <Compile Include="tiradoonline\Models\TimesheetType.cs" />
+    <Compile Include="tiradoonline\Models\Transactions.cs" />
+    <Compile Include="tiradoonline\Models\Unit.cs" />
+    <Compile Include="tiradoonline\Models\Users.cs" />
+    <Compile Include="tiradoonline\Models\UserType.cs" />
+    <Compile Include="tiradoonline\Models\WebsiteEmail.cs" />
+    <Compile Include="tiradoonline\Models\Weight.cs" />
+    <Compile Include="tiradoonline\Models\ZipCode.cs" />
+    <Compile Include="tiradoonline\Models\ZipCodeType.cs" />
+    <Compile Include="tiradoonline\tiradoonlineDB.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tiradoonlineDB.dbml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="tiradoonline\tiradoonlineDB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>tiradoonlineDB.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="tiradoonline\tiradoonlineDB.dbml.layout">
+      <DependentUpon>tiradoonlineDB.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

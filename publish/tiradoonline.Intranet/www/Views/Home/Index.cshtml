@@ -1,0 +1,372 @@
+﻿
+@{
+    Response.AppendHeader("Access-Control-Allow-Origin", "*"); 
+    Layout = null;
+    var pageTitle = Request.ServerVariables["SERVER_NAME"].ToString();
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    
+    <meta name="viewport" content="width=device-width" />
+    <title>@pageTitle</title>
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-2.2.3.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+
+    <!--ANGULAR -->
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/angular/app/tiradoonlineNamespace.js"></script>
+    <script src="~/angular/controllers/zipcodeController.js"></script>
+    <script src="~/angular/controllers/statesController.js"></script>
+    <script src="~/angular/controllers/countriesController.js"></script>
+    <script src="~/angular/controllers/languagesController.js"></script>
+    <script src="~/angular/controllers/musicController.js"></script>
+    <script src="~/angular/controllers/moviesController.js"></script>
+    <script src="~/angular/controllers/eBooksController.js"></script>
+
+    <script type="text/javascript">
+        function stopVideo() {
+            var video = document.getElementsByTagName('video')[0];
+            video.pause();
+        }
+    </script>
+
+</head>
+<body ng-app="tiradoonlineNamespace">
+    <div>
+        <div class="container">
+            <div class="panel">
+                <h1 class="well">@pageTitle</h1>
+            </div>
+
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#zipcode">Zipcodes</a></li>
+                <li><a data-toggle="tab" href="#states">States</a></li>
+                <li><a data-toggle="tab" href="#countries">Countries</a></li>
+                <li><a data-toggle="tab" href="#languages">Languages</a></li>
+                <li><a data-toggle="tab" href="#music">Music</a></li>
+                <li><a data-toggle="tab" href="#movies">Movies</a></li>
+                <li><a data-toggle="tab" href="#eBooks">eBooks</a></li>
+            </ul>
+
+            <!-- START OF TABS -->
+            <div class="tab-content">
+
+                <!-- ZIPCODE TAB -->
+                <div id="zipcode" class="tab-pane fade active">
+
+                    <div ng-controller="zipcodeController">
+                        <form class="form-horizontal" role="form">
+                            <h3>
+                                Zipcode
+                            </h3>
+
+                            <table class="table table-striped table-hover table-condensed">
+                                <thead>
+                                    <tr>
+                                        <td>
+                                            <label class="form-control-label">Zipcode:</label>
+                                        </td>
+                                        <td>
+                                            <label class="form-control-label">City:</label>
+                                        </td>
+                                        <td>
+                                            <label class="form-control-label">State:</label>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in grid">
+                                        <td class="col-lg-4">
+                                            <div class="input-group col-sm-4">
+                                                <input type="text" maxlength="5" class="form-control" ng-model="zipcode" ng-change="getZipCode()" />
+                                                <span class="input-group-addon">
+                                                    <i class="glyphicon glyphicon-search"></i>
+                                                </span>
+                                            </div>
+
+                                        </td>
+                                        <td class="col-lg-4">
+                                            <div class="input-group col-sm-4">
+                                                <input type="text" maxlength="5" class="form-control" ng-model="city" />
+                                                <span class="input-group-addon">
+                                                    <i class="glyphicon glyphicon-search"></i>
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td class="col-lg-4">
+                                            <div class="input-group col-sm-4">
+                                                <input type="text" maxlength="5" class="form-control" ng-model="state" />
+                                                <span class="input-group-addon">
+                                                    <i class="glyphicon glyphicon-search"></i>
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <table class="table table-striped table-hover table-condensed">
+                                <thead>
+                                    <tr class="success">
+                                        <td>
+                                            <b>Zipcode</b>
+                                        </td>
+                                        <td><b>City</b></td>
+                                        <td><b>State</b></td>
+                                        <td><b>Tax&nbsp;Rate</b></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in grid">
+                                        <td class="col-lg-4">
+                                            {{ item.Zipcode }}
+                                        </td>
+                                        <td class="col-lg-4">
+                                            {{ item.City }}
+                                        </td>
+                                        <td class="col-lg-4">
+                                            {{ item.State }}
+                                        </td>
+                                        <td class="col-lg-4">
+                                            {{ item.TaxRate }}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+
+
+                    <script>
+                        //$(document).ready(function () {
+                        //    $("#zipcode").keyup(function (e) {
+                        //        // Allow: backspace, delete, tab, escape, enter and .
+                        //        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+                        //            // Allow: Ctrl+A
+                        //            (e.keyCode == 65 && e.ctrlKey === true) ||
+                        //            // Allow: Ctrl+C
+                        //            (e.keyCode == 67 && e.ctrlKey === true) ||
+                        //            // Allow: Ctrl+X
+                        //            (e.keyCode == 88 && e.ctrlKey === true) ||
+                        //            // Allow: home, end, left, right
+                        //            (e.keyCode >= 35 && e.keyCode <= 39)) {
+                        //            // let it happen, don't do anything
+                        //            return;
+                        //        }
+                        //        // Ensure that it is a number and stop the keypress
+                        //        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                        //            e.preventDefault();
+                        //        }
+                        //    });
+                        //});
+                    </script>
+
+                </div>
+                <!-- END OF ZIPCODE TAB -->
+                <!-- STATES TAB -->
+                <div id="states" class="tab-pane fade">
+
+                    <h3>States</h3>
+
+                    <div ng-controller="statesController">
+
+                        <table class="table table-striped table-hover table-condensed">
+                            <thead>
+                                <tr class="success">
+                                    <td><b>State</b></td>
+                                    <td><b>Abbr</b></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in states">
+                                    <td>
+                                        {{ item.State }}
+                                    </td>
+                                    <td>
+                                        {{ item.StateAbbr }}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+                <!-- END STATES TAB -->
+                <!-- COUNTRIES TAB -->
+                <div id="countries" class="tab-pane fade">
+
+                    <h3>Countries</h3>
+
+                    <div ng-controller="countriesController">
+
+                        <table class="table table-striped table-hover table-condensed">
+                            <thead>
+                                <tr class="success">
+                                    <td><b>Country</b></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in countries">
+                                    <td>
+                                        {{ item.Country }}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+
+                </div>
+                <!-- END COUNTRIES TAB -->
+                <!-- LANGUAGES TAB -->
+                <div id="languages" class="tab-pane fade">
+                    <h3>Languages</h3>
+
+                    <div ng-controller="languagesController">
+
+                        <table class="table table-striped table-hover table-condensed">
+                            <thead>
+                                <tr class="success">
+                                    <td><b>Language</b></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in languages">
+                                    <td>
+                                        {{ item.Language }}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+                <!-- END OF LANGUAGES TAB -->
+                <!-- MUSIC TAB -->
+                <div id="music" class="tab-pane fade">
+                    <h3>Music</h3>
+
+                    <div ng-controller="musicController">
+
+                        <table class="table table-striped table-hover table-condensed">
+                            <thead>
+                                <tr class="success">
+                                    <td><b>Song</b></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in songs">
+                                    <td>
+                                        <img src="~/Content/images/icons/music_icon.gif" />&nbsp;&nbsp;
+                                        <a href="http://{{ item.MediaFileURL}}" target="_blank">
+                                            {{ item.MediaFileName }}</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+                <!-- END OF MUSIC TAB -->
+
+                <!-- MOVIES TAB -->
+                <div id="movies" class="tab-pane fade">
+                    <h3>Movies</h3>
+
+                    <div ng-controller="moviesController">
+
+                        <table class="table table-striped table-hover table-condensed">
+                            <thead>
+                                <tr class="success">
+                                    <td><b>Movie</b></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in movies">
+                                    <td>
+                                        <img src="~/Content/images/icons/movies_icon.gif" />&nbsp;&nbsp;
+                                        <a href="#" ng-click="showModal('http://' + item.MediaFileURL)">{{ item.MediaFileName }}</a>
+                                     </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+                <!-- END OF MOVIES TAB -->
+
+
+
+
+                <!-- EBOOKS TAB -->
+                <div id="eBooks" class="tab-pane fade">
+                    <h3>eBooks</h3>
+
+                    <div ng-controller="eBooksController">
+
+                        <table class="table table-striped table-hover table-condensed">
+                            <thead>
+                                <tr class="success">
+                                    <td><b>eBook</b></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in eBooks">
+                                    <td>
+                                        <img src="~/Content/images/icons/pdf_icon.gif" />&nbsp;&nbsp;
+                                        <a hhref="http://{{ item.MediaFileURL}}">{{ item.MediaFileName }}</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+                <!-- END OF EBOOKS TAB -->
+
+            </div>
+            <!-- END OF TABS -->
+
+
+        </div>
+    </div>
+
+    <div id="mediaPlayerModal" class="modal fade">
+        <div class="modal-dialog vertical-align-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" onclick="stopPlayer()" aria-hidden="true">×</button>
+                    <h4 class="modal-title">tiradoonline.com Media Player</h4>
+                </div>
+                <div class="panel">
+                    Movie: <span id="movieTitle"></span>
+                </div>
+                <div style="text-align:center">
+                    <video id="videoPlayer" controls poster="~/Content/images/logo/logo.gif" width="100%" height="430">
+                        <source src="" />
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/jquery-2.2.3.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+</body>
+</html>

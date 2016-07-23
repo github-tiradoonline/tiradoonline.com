@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+  <Alias Key="Model" Value="InterviewQuestionsAnswersDB" />
+  <Alias Key="Target" Value="InterviewQuestionsAnswersDB.Store" />
+  <EntityContainerMapping CdmEntityContainer="InterviewQuestionsAnswersDBContainer" StorageEntityContainer="InterviewQuestionsAnswersDBStoreContainer">
+    <EntitySetMapping Name="Answers">
+      <EntityTypeMapping TypeName="InterviewQuestionsAnswersDB.Answers">
+        <MappingFragment StoreEntitySet="Answers">
+          <ScalarProperty Name="create_dt" ColumnName="create_dt" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="AnswerID" ColumnName="AnswerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Questions">
+      <EntityTypeMapping TypeName="InterviewQuestionsAnswersDB.Questions">
+        <MappingFragment StoreEntitySet="Questions">
+          <ScalarProperty Name="create_dt" ColumnName="create_dt" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subjects">
+      <EntityTypeMapping TypeName="InterviewQuestionsAnswersDB.Subjects">
+        <MappingFragment StoreEntitySet="Subjects">
+          <ScalarProperty Name="create_dt" ColumnName="create_dt" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

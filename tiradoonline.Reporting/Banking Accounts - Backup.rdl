@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="tiradoonlineDataSource">
+      <DataSourceReference>/tiradoonline/DataSourcetiradoonline</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>2f1ce61d-16fa-41c8-bb8c-3ff59a615ef6</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="BankingAccountDataset">
+      <Query>
+        <DataSourceName>tiradoonlineDataSource</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@UserID">
+            <Value>=Parameters!UserID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT
+	*
+FROM 
+	BankingAccount
+WHERE 
+	UserID = @UserID
+	AND Active = 1
+ORDER BY
+	BankingAccountName</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="BankingAccountName">
+          <DataField>BankingAccountName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BankingAccountID">
+          <DataField>BankingAccountID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="UserID">
+          <DataField>UserID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ReceiveEmails">
+          <DataField>ReceiveEmails</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="Active">
+          <DataField>Active</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="create_dt">
+          <DataField>create_dt</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="UsersDataset">
+      <Query>
+        <DataSourceName>tiradoonlineDataSource</DataSourceName>
+        <CommandText>SELECT 
+	* 
+FROM
+	Users
+WHERE
+	Active = 1
+ORDER BY
+	UserName</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="UserID">
+          <DataField>UserID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="UserName">
+          <DataField>UserName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Password">
+          <DataField>Password</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FirstName">
+          <DataField>FirstName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LastName">
+          <DataField>LastName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="UserTypeID">
+          <DataField>UserTypeID</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="Email">
+          <DataField>Email</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MobileEmail">
+          <DataField>MobileEmail</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Address1">
+          <DataField>Address1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Address2">
+          <DataField>Address2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="City">
+          <DataField>City</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="StateID">
+          <DataField>StateID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ZipCode">
+          <DataField>ZipCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Phone">
+          <DataField>Phone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Administration">
+          <DataField>Administration</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="Contacts">
+          <DataField>Contacts</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="PersonalInformation">
+          <DataField>PersonalInformation</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="Documents">
+          <DataField>Documents</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="Banking">
+          <DataField>Banking</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="CreditCards">
+          <DataField>CreditCards</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="MonthlyExpenses">
+          <DataField>MonthlyExpenses</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="CollectionAgency">
+          <DataField>CollectionAgency</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="Photos">
+          <DataField>Photos</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="Music">
+          <DataField>Music</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="MovieCollection">
+          <DataField>MovieCollection</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="Movies">
+          <DataField>Movies</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="Snippets">
+          <DataField>Snippets</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="Health">
+          <DataField>Health</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="Jobs">
+          <DataField>Jobs</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="Recovery">
+          <DataField>Recovery</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="Timesheet">
+          <DataField>Timesheet</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="tiradoonline">
+          <DataField>tiradoonline</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="Notes">
+          <DataField>Notes</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="ServerInformation">
+          <DataField>ServerInformation</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="AIM">
+          <DataField>AIM</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Yahoo">
+          <DataField>Yahoo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Hotmail">
+          <DataField>Hotmail</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Skype">
+          <DataField>Skype</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Gmail">
+          <DataField>Gmail</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Active">
+          <DataField>Active</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="update_by">
+          <DataField>update_by</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="update_dt">
+          <DataField>update_dt</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="create_dt">
+          <DataField>create_dt</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Tablix Name="BankingAccountTablix">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>2.5in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Banking Account Name</Value>
+                                  <Style>
+                                    <FontFamily>Cambria</FontFamily>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Color>White</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>CornflowerBlue</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="BankingAccountName">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!BankingAccountName.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <ListStyle>Bulleted</ListStyle>
+                              <ListLevel>1</ListLevel>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>BankingAccountName</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                </TablixMember>
+                <TablixMember>
+                  <Group Name="Details" />
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>BankingAccountDataset</DataSetName>
+            <Top>1.66333in</Top>
+            <Left>0.255in</Left>
+            <Height>0.5in</Height>
+            <Width>2.5in</Width>
+            <ToolTip>Banking Accounts</ToolTip>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Textbox Name="ReportName">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Globals!ReportName</Value>
+                    <Style>
+                      <FontSize>20pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>ReportName</rd:DefaultName>
+            <Top>1.14667in</Top>
+            <Left>0.255in</Left>
+            <Height>0.38333in</Height>
+            <Width>5.245in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Image Name="banner_tiradoonline">
+            <Source>Embedded</Source>
+            <Value>logo_banner</Value>
+            <Sizing>FitProportional</Sizing>
+            <Top>0.19667in</Top>
+            <Left>0.255in</Left>
+            <Height>0.85in</Height>
+            <Width>4.25833in</Width>
+            <ZIndex>2</ZIndex>
+            <ToolTip>tiradoonline.com</ToolTip>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
+        </ReportItems>
+        <Height>2.53833in</Height>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Body>
+      <Width>6in</Width>
+      <Page>
+        <PageFooter>
+          <Height>0.45in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <LeftMargin>1in</LeftMargin>
+        <RightMargin>1in</RightMargin>
+        <TopMargin>1in</TopMargin>
+        <BottomMargin>1in</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="UserID">
+      <DataType>String</DataType>
+      <Prompt>UserID</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>UsersDataset</DataSetName>
+          <ValueField>UserID</ValueField>
+          <LabelField>UserName</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
+  <EmbeddedImages>
+    <EmbeddedImage Name="logo_banner">
+      <MIMEType>image/gif</MIMEType>
+      <ImageData>R0lGODlhjQFRAPcAAOru9Ozs7GR6oI+gtLy8vE1rnurq6lt2pa+zuz1up6GhofDw8NLS0qmpqaa0zWJ8qjJUkObm5neNtd3i6+7u7tTU1Nre5NbW1tDQ0JaWln2Nqb2+wFRwot3d3Z6enra2tomJiejo6JGRkTJTjYWFhYSZvZqamoKCgpipxt/f3+Pj483R2H9/f9jY2JGjw+Hh4aamprm5ud7e3niJp46OjjlZk7PA1qSrtwZHl7O3vRtUnLi4uG6Bo6WuvkZlm8nN07vBzUxnl5+ntbGxsSlMirrG2pKhu8HL3bO7yJ+vy7i7vypaleTo8JCcsH19fcrKyqSkpK+vr62trbS0tMDEzZ6pvI6fs2l+oltynaurq0ZjlnuRtpSsw3B4gpWitEJglMLL2jxgjc7V4sjIyKWxxa260i5QjERjijRloouLi0Vxp4uYrtbb24Ogv42evSJZnXOFpdTa5F95pauzwOHl6ubq7jxbkay6y4OVtJilvcTJ03KHq0Bfl3aLqyxem3eAjIONmlBrmYGWumB2nhBNmWtzfaGvyHJ3fHSJo3l5eVFtn3yavZ2mso2asYaYrXV1dT5dlIGRrWqAqTdoo77F0j1ck0hmmW2DqFNtm/Tx4/7+/v39/b6+vvv7+ytOjMXFxczMzPn5+ff39/j5+87OzvH0+PT09Nra2vr6+sfHx83Nzdbd6fb29rjH0Pz8/Nvb2/Ly8s/Pz/Pz82mCrjhXj/X19YeUrJqjs8jR4YKQqnCHsYuewM/X5fj4+H2TuZWfsVZvm6qvuezr4YmWrrDBzd3h3LjB0V9whMnKzOXm3tDR01Runfb3+XmNscXM2Nna3Gt8kPT194iYtGyDrWqHqm+GsM/W1zZfkHl7fpqwx2yPt+Lj5cPExlx9p1mBr7W5wFdrhLm+yI6Sl1F4p22KrYeHiNTV1+jp63R4fcfQ4NLT1dvg6LO9z2Z/qytfn4mkwJikuMfIyn+Qr7jD1mRue4WT
+rR5UlyZYl4aYt77H13SVuYmXscLCwiRIiL+/v////yH5BAAAAAAALAAAAACNAVEAAAj/AP8JHEiwoMGDCBMqXMiwocOHECNKnEixosWLGDNq3Mixo8ePIEOKHEmypMmTKFOqXMmypcuXMGPKnEmzps2bOHPq3Mmzp8+fQIMKHUq0qNGjSJMq5SkqRYpX/vx98EDVw5SoDJzKWsq1q9einV4RyMCirNmzaM2K+HBB1Ne3cOO6VOHPBFoaNExQzRKlbxQpVfGeOJuBwCu5iBMrzhhLxFkaHqREnUy5MuUhHmicBcHP7eLPoEMLFMUPRNlyJrIQsMy6NWXAplmQ+LBVtO3bXGV9IFE2DQzXwINHjeK4bJQAuJMrD0pAbRTh0INPIWvc8/Lr2GUGsMsiw1XonMKL/x8fPWoM7iAOZ1/PHiW/wSQkQ1dCLsGk+5PQjHMUg0D48v4MEdsUnbRn4IEcyaJAWSLEEJ0SaGhzRysUUshFAn1MsYN/ABLgAYMqIGjQKKP4VIovuohIUwS8nfBbeV5MksmMNM7Yih8wRLEhJwAGGFssKgpUSgE+lLgTL3z000+QMbHIAg0f9DhAAjXWeKMICgwRA489jlUWkCpyoGQROx3hiZKehHDKJkyy5KQIqwHIyZRV0tjKEiRkkMUOXPboz4csgHlgEkr2QwUpoeBkZqFa8NNZmyq9GaecVlBZZyZ3siACDB9M6ieggrIHwJn92OFoCDfhQqqSgziaKKQnSf/qpz+cVHoppktoyqmnn35p4CyF5uIocjUBUEM/EGyh5C38fALrSbLwBuestNp66Z1O0LArtZMBGiJJE+DChE+4FPqFo58USNMoYnoCxhz9jOAoBgQxocsDRzzrURZP8kqppXViq22n3E5mVwbqhuSCkrMYVAoKKJQy0ygFFNqEox3Y5IuSR2BwRT/SOPrtPwAk2c8B+nJ0AQsnOOhnDgPETA3AVbZizzHQaLCGFTEjQF6HpvkjUhmFFrFA
+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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportServerUrl>http://teddy-laptop/ReportServer_SQL2K14</rd:ReportServerUrl>
+  <rd:ReportID>659f5864-c497-4bde-a2a4-1ff599c68624</rd:ReportID>
+</Report>

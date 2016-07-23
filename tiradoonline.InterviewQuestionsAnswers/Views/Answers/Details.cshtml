@@ -1,0 +1,42 @@
+﻿@model tiradoonline.DataAccess.InterviewQuestionsAnswers.Models.Answers
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Answers</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Questions.Question)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Questions.Question)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Answer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Answer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.create_dt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.create_dt)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AnswerID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

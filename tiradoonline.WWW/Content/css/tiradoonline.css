@@ -1,0 +1,53 @@
+﻿@import url("/Content/css/navbar.css");
+
+html{
+	/* This image will be displayed fullscreen */
+
+	/* Ensure the html element always takes up the full height of the browser window */
+	min-height:100%;
+
+	/* The Magic */
+	background-size:cover;
+}
+
+body{
+	background:url('/Content/images/background/background.jpg') no-repeat center center;
+
+    padding-top: 50px;
+    padding-bottom: 20px;
+
+	/* Workaround for some mobile browsers */
+	min-height:100%;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.bodyContainer {
+    padding-top: 20px;
+    padding-left: 70px;
+    color: #000;
+	background: url('/Content/images/background/spiral_notebook.gif');
+	background-position: left;
+	background-repeat: repeat-y;
+    opacity: .7;
+}
+
+
+/* Set width on the form input elements since they're 100% wide by default */
+input, select, textarea {
+    max-width: 280px;
+}
+
+.iconImage {
+	opacity: .5;
+}
+
+.iconImage:hover {
+	opacity: 1;
+}
+
+

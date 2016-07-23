@@ -1,0 +1,10 @@
+C:\Storage\Projects\tiradoonline.com\tiradoonline.VB\bin\Debug\tiradoonline.VB.exe.config
+C:\Storage\Projects\tiradoonline.com\tiradoonline.VB\bin\Debug\tiradoonline.VB.exe
+C:\Storage\Projects\tiradoonline.com\tiradoonline.VB\bin\Debug\tiradoonline.VB.pdb
+C:\Storage\Projects\tiradoonline.com\tiradoonline.VB\bin\Debug\tiradoonline.VB.xml
+C:\Storage\Projects\tiradoonline.com\tiradoonline.VB\obj\Debug\tiradoonline.VB.vbprojResolveAssemblyReference.cache
+C:\Storage\Projects\tiradoonline.com\tiradoonline.VB\obj\Debug\tiradoonline.VB.Resources.resources
+C:\Storage\Projects\tiradoonline.com\tiradoonline.VB\obj\Debug\tiradoonline.VB.vbproj.GenerateResource.Cache
+C:\Storage\Projects\tiradoonline.com\tiradoonline.VB\obj\Debug\tiradoonline.VB.exe
+C:\Storage\Projects\tiradoonline.com\tiradoonline.VB\obj\Debug\tiradoonline.VB.xml
+C:\Storage\Projects\tiradoonline.com\tiradoonline.VB\obj\Debug\tiradoonline.VB.pdb

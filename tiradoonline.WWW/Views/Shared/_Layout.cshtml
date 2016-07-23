@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <link href="~/Content/css/tiradoonline.css" rel="stylesheet" />
+</head>
+<body>
+    @***************************
+        NAVIGATION
+    ***************************@
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            
+            <div class="navbar-header" style="padding:0px;margin:0px;">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tiradoonlineMenu" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/Home" style="padding:0px;margin:0px;">
+                    <img src="~/Content/images/logo/logo.gif" alt="@ViewBag.Title" style="margin-top:2px;padding-top:2px;width:50px;height:39px;float:left;" />
+                    <div style="margin-top:8px;padding-top:5px;margin-left:10px;float:right">@ViewBag.Title</div>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse id="tiradoonlineMenu">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#">Home</a></li>
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Social Media <span class="caret"></span></a>
+                        <ul class="dropdown-menu navbar-inverse">
+                            <li><a href="https://www.linkedin.com/in/theodoretirado" target="_blank"><img src="~/Content/images/follow/linked_in.gif" alt="LinkedIn" border="0" class="iconMenu"></a></li>
+                            <li><a href="http://www.facebook.com/teddytirado" target="_blank"><img src="~/Content/images/follow/facebook.gif" alt="Facebook" border="0" class="iconMenu"></a></li>
+                            <li><a href="https://twitter.com/theodoretirado" target="_blank"><img src="~/Content/images/follow/twitter.gif" alt="Twitter" border="0" class="iconMenu"></a></li>
+                            <li><a href="https://myspace.com/teddytirado" target="_blank"><img src="~/Content/images/follow/myspace.gif" alt="MySpace" border="0" class="iconMenu"></a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Contact <span class="caret"></span></a>
+                        <ul class="dropdown-menu navbar-inverse">
+                            <li><a href="#" data-reveal-id="modalPhone"><img src="~/Content/images/menu/phone.gif" alt="Phone" width="69" height="33" border="0" class="iconMenu"></a></li>
+                            <li><a href="#" data-reveal-id="modalTextMessage"><img src="~/Content/images/menu/text.gif" alt="Text" width="69" height="33" border="0" class="iconMenu"></a></li>
+                            <li><a href="#" data-reveal-id="modalEmail"><img src="~/Content/images/menu/email.gif" alt="Email" width="69" height="33" border="0" class="iconMenu"></a></li>
+                            <li><a href="#" data-reveal-id="modalFax"><img src="~/Content/images/menu/fax.gif" alt="Fax" width="69" height="33" border="0" class="iconMenu"></a></li>
+                        </ul>
+                    </li>
+
+                </ul>            
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </div>
+
+
+
+    @***************************
+        CONTAINER
+    ***************************@
+    <div class="container body-content">
+
+
+        @RenderBody()
+
+
+        @***************************
+            FOOTER
+        ***************************@
+        <footer>
+            <div class="navbar navbar-inverse navbar-fixed-bottom">
+                <div class="container">
+                        <div class="navbar-brand"><p>&copy; @DateTime.Now.Year - @ViewBag.Title</p></a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav"></ul>
+                    </div>
+                </div>
+            </div>
+            
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

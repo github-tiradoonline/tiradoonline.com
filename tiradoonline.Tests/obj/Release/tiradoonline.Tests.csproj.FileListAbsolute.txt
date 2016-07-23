@@ -1,0 +1,11 @@
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Tests\bin\Release\tiradoonline.Tests.dll
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Tests\bin\Release\tiradoonline.Tests.pdb
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Tests\bin\Release\tiradoonline.ClassLibrary.dll
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Tests\bin\Release\tiradoonline.DataAccess.dll
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Tests\bin\Release\tiradoonline.Models.exe
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Tests\bin\Release\tiradoonline.ClassLibrary.pdb
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Tests\bin\Release\tiradoonline.DataAccess.pdb
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Tests\bin\Release\tiradoonline.Models.pdb
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Tests\obj\Release\tiradoonline.Tests.csprojResolveAssemblyReference.cache
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Tests\obj\Release\tiradoonline.Tests.dll
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Tests\obj\Release\tiradoonline.Tests.pdb

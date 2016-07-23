@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InterviewQuestionsAnswersModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Answers">
+    <Key>
+      <PropertyRef Name="AnswerID" />
+    </Key>
+    <Property Name="AnswerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuestionID" Type="Int32" Nullable="false" />
+    <Property Name="Answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="create_dt" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Questions" Relationship="Self.FK_Answers_Questions_QuestionID" FromRole="Answers" ToRole="Questions" />
+  </EntityType>
+  <EntityType Name="Questions">
+    <Key>
+      <PropertyRef Name="QuestionID" />
+    </Key>
+    <Property Name="QuestionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubjectID" Type="Int32" Nullable="false" />
+    <Property Name="Question" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="create_dt" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Answers" Relationship="Self.FK_Answers_Questions_QuestionID" FromRole="Questions" ToRole="Answers" />
+    <NavigationProperty Name="Subjects" Relationship="Self.FK_Questions_Subjects_SubjectID" FromRole="Questions" ToRole="Subjects" />
+  </EntityType>
+  <EntityType Name="Subjects">
+    <Key>
+      <PropertyRef Name="SubjectID" />
+    </Key>
+    <Property Name="SubjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Subject" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="create_dt" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Questions" Relationship="Self.FK_Questions_Subjects_SubjectID" FromRole="Subjects" ToRole="Questions" />
+  </EntityType>
+  <Association Name="FK_Answers_Questions_QuestionID">
+    <End Role="Questions" Type="Self.Questions" Multiplicity="1" />
+    <End Role="Answers" Type="Self.Answers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questions">
+        <PropertyRef Name="QuestionID" />
+      </Principal>
+      <Dependent Role="Answers">
+        <PropertyRef Name="QuestionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Questions_Subjects_SubjectID">
+    <End Role="Subjects" Type="Self.Subjects" Multiplicity="1" />
+    <End Role="Questions" Type="Self.Questions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subjects">
+        <PropertyRef Name="SubjectID" />
+      </Principal>
+      <Dependent Role="Questions">
+        <PropertyRef Name="SubjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="InterviewQuestionsAnswersEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Answers" EntityType="Self.Answers" />
+    <EntitySet Name="Questions" EntityType="Self.Questions" />
+    <EntitySet Name="Subjects" EntityType="Self.Subjects" />
+    <AssociationSet Name="FK_Answers_Questions_QuestionID" Association="Self.FK_Answers_Questions_QuestionID">
+      <End Role="Questions" EntitySet="Questions" />
+      <End Role="Answers" EntitySet="Answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Questions_Subjects_SubjectID" Association="Self.FK_Questions_Subjects_SubjectID">
+      <End Role="Subjects" EntitySet="Subjects" />
+      <End Role="Questions" EntitySet="Questions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

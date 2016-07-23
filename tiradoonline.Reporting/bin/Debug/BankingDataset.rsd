@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>tiradoonlineDataSource</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="@BankingAccountID">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandText>SELECT
+	a.*,
+	c.BankingAccountName,
+	TransactionName = b.Description,
+	PreviousBalance = 
+		(
+			SELECT 
+				SUM(Payment)
+			FROM 
+				Banking
+			WHERE
+				BankingAccountID = @BankingAccountID
+				AND BankingDate &lt; (CONVERT(VARCHAR, DATEPART(mm, GETDATE())) + '/1/' + CONVERT(VARCHAR, DATEPART(yy, GETDATE())))
+		),
+	FinalBalance = 
+		(
+			SELECT 
+				SUM(Payment)
+			FROM 
+				Banking
+			WHERE
+				BankingAccountID = @BankingAccountID
+				AND DATEPART(mm, a.BankingDate) = DATEPART(mm, GETDATE())
+				AND DATEPART(yy, a.BankingDate) = DATEPART(yy, GETDATE())		
+		)
+FROM
+	Banking a,
+	Transactions b,
+	BankingAccount c
+WHERE
+	a.BankingAccountID = @BankingAccountID
+	AND a.BankingAccountID = c.BankingAccountID
+	AND a.TransactionID = b.TransactionID
+	AND DATEPART(mm, a.BankingDate) = DATEPART(mm, GETDATE())
+	AND DATEPART(yy, a.BankingDate) = DATEPART(yy, GETDATE())</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="BankingID">
+        <DataField>BankingID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="BankingAccountID">
+        <DataField>BankingAccountID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="SubBankingAccountID">
+        <DataField>SubBankingAccountID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="TransactionID">
+        <DataField>TransactionID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="BankingDate">
+        <DataField>BankingDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Payment">
+        <DataField>Payment</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="BankingFile">
+        <DataField>BankingFile</DataField>
+        <rd:TypeName>System.Boolean</rd:TypeName>
+      </Field>
+      <Field Name="BankingFileName">
+        <DataField>BankingFileName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Comment">
+        <DataField>Comment</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Pending">
+        <DataField>Pending</DataField>
+        <rd:TypeName>System.Boolean</rd:TypeName>
+      </Field>
+      <Field Name="update_dt">
+        <DataField>update_dt</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="create_dt">
+        <DataField>create_dt</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="BankingAccountName">
+        <DataField>BankingAccountName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TransactionName">
+        <DataField>TransactionName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="PreviousBalance">
+        <DataField>PreviousBalance</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="FinalBalance">
+        <DataField>FinalBalance</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

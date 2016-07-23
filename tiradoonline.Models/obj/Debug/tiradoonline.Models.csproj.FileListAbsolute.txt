@@ -1,0 +1,10 @@
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Models\bin\Debug\tiradoonline.Models.pdb
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Models\obj\Debug\tiradoonline.Models.pdb
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Models\bin\Debug\tiradoonline.Models.dll.config
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Models\bin\Debug\tiradoonline.Models.dll
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Models\obj\Debug\tiradoonline.Models.dll
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Models\bin\Debug\EntityFramework.dll
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Models\bin\Debug\EntityFramework.xml
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Models\obj\Debug\tiradoonline.Models.csprojResolveAssemblyReference.cache

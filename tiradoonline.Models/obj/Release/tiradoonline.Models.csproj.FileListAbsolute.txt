@@ -1,0 +1,5 @@
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Models\bin\Release\tiradoonline.Models.exe.config
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Models\bin\Release\tiradoonline.Models.exe
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Models\bin\Release\tiradoonline.Models.pdb
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Models\obj\Release\tiradoonline.Models.exe
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Models\obj\Release\tiradoonline.Models.pdb

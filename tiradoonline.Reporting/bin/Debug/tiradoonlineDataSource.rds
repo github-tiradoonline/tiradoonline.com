@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="tiradoonlineDataSource">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=.\SQL2K14;Initial Catalog=tiradoonline</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>8f75f8e8-b51f-4c78-ab35-c8c5171ffcd4</DataSourceID>
+</RptDataSource>

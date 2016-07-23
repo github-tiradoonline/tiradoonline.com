@@ -1,0 +1,33 @@
+﻿@model IEnumerable<tiradoonline.DataAccess.InterviewQuestionsAnswers.Models.Subjects>
+
+<table class="table">
+    <tr>
+        <th>
+            <div class="navbar-brand navbar-left">
+                Subjects
+                [ @Html.ActionLink("Create New Subject", "Create", "Subject") ]
+            </div>
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.create_dt)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subject)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.create_dt)
+        </td>*@
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SubjectID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SubjectID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SubjectID })
+        </td>
+    </tr>
+}
+
+</table>

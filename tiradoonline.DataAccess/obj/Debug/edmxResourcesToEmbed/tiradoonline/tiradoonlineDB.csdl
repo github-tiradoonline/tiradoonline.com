@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="tiradoonlineDB" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="tiradoonlineDB" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Countries" EntityType="tiradoonlineDB.Countries" />
+    <EntitySet Name="Languages" EntityType="tiradoonlineDB.Languages" />
+    <EntitySet Name="States" EntityType="tiradoonlineDB.States" />
+    <EntitySet Name="ZipCode" EntityType="tiradoonlineDB.ZipCode" />
+    <AssociationSet Name="FK_ZipCode_States" Association="tiradoonlineDB.FK_ZipCode_States">
+      <End Role="States" EntitySet="States" />
+      <End Role="ZipCode" EntitySet="ZipCode" />
+    </AssociationSet>
+    <FunctionImport Name="sp_Countries_get" ReturnType="Collection(tiradoonlineDB.sp_Countries_get_Result)" />
+    <FunctionImport Name="sp_Languages_get" ReturnType="Collection(tiradoonlineDB.sp_Languages_get_Result)" />
+    <FunctionImport Name="sp_States_get" ReturnType="Collection(tiradoonlineDB.sp_States_get_Result)" />
+    <FunctionImport Name="sp_ZipCode_City_State_ZipCode_get" ReturnType="Collection(tiradoonlineDB.sp_ZipCode_City_State_ZipCode_get_Result)">
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="State" Mode="In" Type="String" />
+      <Parameter Name="ZipCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ZipCode_State_get" ReturnType="Collection(tiradoonlineDB.sp_ZipCode_State_get_Result)">
+      <Parameter Name="State" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_ZipCode_ZipCode_get" ReturnType="Collection(tiradoonlineDB.sp_ZipCode_ZipCode_get_Result)">
+      <Parameter Name="ZipCode" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="Countries">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryAbbr" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="CountryName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="create_dt" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Languages">
+    <Key>
+      <PropertyRef Name="LanguageID" />
+    </Key>
+    <Property Name="LanguageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Language" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="create_dt" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="States">
+    <Key>
+      <PropertyRef Name="StateID" />
+    </Key>
+    <Property Name="StateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="State" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="StateAbbr" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ZipCode" Relationship="tiradoonlineDB.FK_ZipCode_States" FromRole="States" ToRole="ZipCode" />
+  </EntityType>
+  <EntityType Name="ZipCode">
+    <Key>
+      <PropertyRef Name="ZipCodeID" />
+    </Key>
+    <Property Name="ZipCodeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Zipcode1" Type="Double" />
+    <Property Name="ZipCodeTypeID" Type="Int32" Nullable="false" />
+    <Property Name="City" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LocationType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Lat" Type="Double" />
+    <Property Name="Long" Type="Double" />
+    <Property Name="Location" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Decommisioned" Type="Boolean" Nullable="false" />
+    <Property Name="TaxReturnsFiled" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="EstimatedPopulation" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TotalWages" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="States" Relationship="tiradoonlineDB.FK_ZipCode_States" FromRole="ZipCode" ToRole="States" />
+  </EntityType>
+  <Association Name="FK_ZipCode_States">
+    <End Type="tiradoonlineDB.States" Role="States" Multiplicity="1" />
+    <End Type="tiradoonlineDB.ZipCode" Role="ZipCode" Multiplicity="*" />
+  </Association>
+  <ComplexType Name="sp_Countries_get_Result">
+    <Property Type="Int32" Name="CountryID" Nullable="false" />
+    <Property Type="String" Name="CountryAbbr" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="Country" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sp_Languages_get_Result">
+    <Property Type="Int32" Name="LanguageID" Nullable="false" />
+    <Property Type="String" Name="Language" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sp_States_get_Result">
+    <Property Type="Int32" Name="StateID" Nullable="false" />
+    <Property Type="String" Name="StateAbbr" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="sp_ZipCode_City_State_ZipCode_get_Result">
+    <Property Type="Int32" Name="ZipCodeID" Nullable="false" />
+    <Property Type="Double" Name="Zipcode" Nullable="true" />
+    <Property Type="Int32" Name="ZipCodeTypeID" Nullable="false" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="StateID" Nullable="false" />
+    <Property Type="String" Name="LocationType" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="Lat" Nullable="true" />
+    <Property Type="Double" Name="Long" Nullable="true" />
+    <Property Type="String" Name="Location" Nullable="true" MaxLength="255" />
+    <Property Type="Boolean" Name="Decommisioned" Nullable="false" />
+    <Property Type="String" Name="TaxReturnsFiled" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="EstimatedPopulation" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="TotalWages" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="sp_ZipCode_State_get_Result">
+    <Property Type="Int32" Name="ZipCodeID" Nullable="false" />
+    <Property Type="Double" Name="Zipcode" Nullable="true" />
+    <Property Type="Int32" Name="ZipCodeTypeID" Nullable="false" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="StateID" Nullable="false" />
+    <Property Type="String" Name="LocationType" Nullable="true" MaxLength="255" />
+    <Property Type="Double" Name="Lat" Nullable="true" />
+    <Property Type="Double" Name="Long" Nullable="true" />
+    <Property Type="String" Name="Location" Nullable="true" MaxLength="255" />
+    <Property Type="Boolean" Name="Decommisioned" Nullable="false" />
+    <Property Type="String" Name="TaxReturnsFiled" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="EstimatedPopulation" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="TotalWages" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="StateID1" Nullable="false" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="StateAbbr" Nullable="true" MaxLength="2" />
+  </ComplexType>
+  <ComplexType Name="sp_ZipCode_ZipCode_get_Result">
+    <Property Type="String" Name="City" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Zipcode" Nullable="true" MaxLength="8000" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="30" />
+    <Property Type="Decimal" Name="TaxRate" Nullable="true" Precision="9" Scale="5" />
+  </ComplexType>
+</Schema>

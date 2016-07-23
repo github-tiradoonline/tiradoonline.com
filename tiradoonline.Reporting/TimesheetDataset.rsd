@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSet Name="DataSet1">
+    <Query>
+      <DataSourceReference>tiradoonlineDataSource</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="@TimesheetCompanyID">
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandText>
+SELECT
+	*,
+	TimesheetDate = CONVERT(DATE, TimesheetInvoiceDate)
+FROM
+	Timesheet
+WHERE
+	TimesheetCompanyID = @TimesheetCompanyID
+	AND Active = 1
+ORDER BY
+	TimesheetInvoiceDate</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="TimesheetID">
+        <DataField>TimesheetID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="TimesheetCompanyID">
+        <DataField>TimesheetCompanyID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="TimesheetTypeID">
+        <DataField>TimesheetTypeID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="TimesheetInvoiceDate">
+        <DataField>TimesheetInvoiceDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="TimesheetInvoiceNumber">
+        <DataField>TimesheetInvoiceNumber</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="TimesheetHourlyRate">
+        <DataField>TimesheetHourlyRate</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="TimesheetStartDate">
+        <DataField>TimesheetStartDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="TimesheetEndDate">
+        <DataField>TimesheetEndDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="TimesheetHTML">
+        <DataField>TimesheetHTML</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Active">
+        <DataField>Active</DataField>
+        <rd:TypeName>System.Boolean</rd:TypeName>
+      </Field>
+      <Field Name="create_dt">
+        <DataField>create_dt</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="TimesheetDate">
+        <DataField>TimesheetDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="tiradoonlineDB.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Countries">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryAbbr" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="CountryName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="create_dt" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Languages">
+    <Key>
+      <PropertyRef Name="LanguageID" />
+    </Key>
+    <Property Name="LanguageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Language" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="create_dt" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="States">
+    <Key>
+      <PropertyRef Name="StateID" />
+    </Key>
+    <Property Name="StateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="State" Type="varchar" MaxLength="30" />
+    <Property Name="StateAbbr" Type="varchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="ZipCode">
+    <Key>
+      <PropertyRef Name="ZipCodeID" />
+    </Key>
+    <Property Name="ZipCodeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Zipcode" Type="float" />
+    <Property Name="ZipCodeTypeID" Type="int" Nullable="false" />
+    <Property Name="City" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="StateID" Type="int" Nullable="false" />
+    <Property Name="LocationType" Type="nvarchar" MaxLength="255" />
+    <Property Name="Lat" Type="float" />
+    <Property Name="Long" Type="float" />
+    <Property Name="Location" Type="nvarchar" MaxLength="255" />
+    <Property Name="Decommisioned" Type="bit" Nullable="false" />
+    <Property Name="TaxReturnsFiled" Type="nvarchar" MaxLength="255" />
+    <Property Name="EstimatedPopulation" Type="nvarchar" MaxLength="255" />
+    <Property Name="TotalWages" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <Association Name="FK_ZipCode_States">
+    <End Role="States" Type="Self.States" Multiplicity="1" />
+    <End Role="ZipCode" Type="Self.ZipCode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="States">
+        <PropertyRef Name="StateID" />
+      </Principal>
+      <Dependent Role="ZipCode">
+        <PropertyRef Name="StateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="sp_Countries_get" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_Languages_get" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_States_get" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_ZipCode_City_State_ZipCode_get" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="City" Type="varchar" Mode="In" />
+    <Parameter Name="State" Type="varchar" Mode="In" />
+    <Parameter Name="ZipCode" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_ZipCode_State_get" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="State" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_ZipCode_ZipCode_get" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ZipCode" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="tiradoonlineDBStoreContainer">
+    <EntitySet Name="Countries" EntityType="Self.Countries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Languages" EntityType="Self.Languages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="States" EntityType="Self.States" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ZipCode" EntityType="Self.ZipCode" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ZipCode_States" Association="Self.FK_ZipCode_States">
+      <End Role="States" EntitySet="States" />
+      <End Role="ZipCode" EntitySet="ZipCode" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

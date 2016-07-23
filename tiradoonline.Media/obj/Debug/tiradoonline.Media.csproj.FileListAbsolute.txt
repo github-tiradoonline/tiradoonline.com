@@ -1,0 +1,10 @@
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Media\bin\Debug\tiradoonline.Media.exe.config
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Media\obj\Debug\tiradoonline.Media.csprojResolveAssemblyReference.cache
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Media\bin\Debug\tiradoonline.Media.exe
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Media\bin\Debug\tiradoonline.Media.pdb
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Media\obj\Debug\tiradoonline.Media.exe
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Media\obj\Debug\tiradoonline.Media.pdb
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Media\bin\Debug\tiradoonline.DataAccess.dll
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Media\bin\Debug\tiradoonline.DataAccess.pdb
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Media\bin\Debug\EntityFramework.dll
+C:\Storage\Projects\tiradoonline.com\tiradoonline.Media\bin\Debug\EntityFramework.xml

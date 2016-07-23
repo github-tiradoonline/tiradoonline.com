@@ -1,0 +1,9 @@
+C:\Storage\Projects\tiradoonline.com\tiradoonline.DataAccess\bin\Release\tiradoonline.DataAccess.dll.config
+C:\Storage\Projects\tiradoonline.com\tiradoonline.DataAccess\bin\Release\tiradoonline.DataAccess.dll
+C:\Storage\Projects\tiradoonline.com\tiradoonline.DataAccess\bin\Release\tiradoonline.DataAccess.pdb
+C:\Storage\Projects\tiradoonline.com\tiradoonline.DataAccess\bin\Release\EntityFramework.dll
+C:\Storage\Projects\tiradoonline.com\tiradoonline.DataAccess\bin\Release\EntityFramework.SqlServer.dll
+C:\Storage\Projects\tiradoonline.com\tiradoonline.DataAccess\bin\Release\EntityFramework.xml
+C:\Storage\Projects\tiradoonline.com\tiradoonline.DataAccess\bin\Release\EntityFramework.SqlServer.xml
+C:\Storage\Projects\tiradoonline.com\tiradoonline.DataAccess\obj\Release\tiradoonline.DataAccess.dll
+C:\Storage\Projects\tiradoonline.com\tiradoonline.DataAccess\obj\Release\tiradoonline.DataAccess.pdb

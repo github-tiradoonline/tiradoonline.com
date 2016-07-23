@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+  <Alias Key="Model" Value="tiradoonlineDB" />
+  <Alias Key="Target" Value="tiradoonlineDB.Store" />
+  <EntityContainerMapping CdmEntityContainer="tiradoonlineDB" StorageEntityContainer="tiradoonlineDBStoreContainer">
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="tiradoonlineDB.Countries">
+        <MappingFragment StoreEntitySet="Countries">
+          <ScalarProperty Name="create_dt" ColumnName="create_dt" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="CountryAbbr" ColumnName="CountryAbbr" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Languages">
+      <EntityTypeMapping TypeName="tiradoonlineDB.Languages">
+        <MappingFragment StoreEntitySet="Languages">
+          <ScalarProperty Name="create_dt" ColumnName="create_dt" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="States">
+      <EntityTypeMapping TypeName="tiradoonlineDB.States">
+        <MappingFragment StoreEntitySet="States">
+          <ScalarProperty Name="StateAbbr" ColumnName="StateAbbr" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZipCode">
+      <EntityTypeMapping TypeName="tiradoonlineDB.ZipCode">
+        <MappingFragment StoreEntitySet="ZipCode">
+          <ScalarProperty Name="TotalWages" ColumnName="TotalWages" />
+          <ScalarProperty Name="EstimatedPopulation" ColumnName="EstimatedPopulation" />
+          <ScalarProperty Name="TaxReturnsFiled" ColumnName="TaxReturnsFiled" />
+          <ScalarProperty Name="Decommisioned" ColumnName="Decommisioned" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Long" ColumnName="Long" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="LocationType" ColumnName="LocationType" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="ZipCodeTypeID" ColumnName="ZipCodeTypeID" />
+          <ScalarProperty Name="Zipcode1" ColumnName="Zipcode" />
+          <ScalarProperty Name="ZipCodeID" ColumnName="ZipCodeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK_ZipCode_States" TypeName="tiradoonlineDB.FK_ZipCode_States" StoreEntitySet="ZipCode">
+      <EndProperty Name="ZipCode">
+        <ScalarProperty Name="ZipCodeID" ColumnName="ZipCodeID" />
+      </EndProperty>
+      <EndProperty Name="States">
+        <ScalarProperty Name="StateID" ColumnName="StateID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="sp_Countries_get" FunctionName="tiradoonlineDB.Store.sp_Countries_get">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="tiradoonlineDB.sp_Countries_get_Result">
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="CountryAbbr" ColumnName="CountryAbbr" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Languages_get" FunctionName="tiradoonlineDB.Store.sp_Languages_get">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="tiradoonlineDB.sp_Languages_get_Result">
+          <ScalarProperty Name="LanguageID" ColumnName="LanguageID" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_States_get" FunctionName="tiradoonlineDB.Store.sp_States_get">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="tiradoonlineDB.sp_States_get_Result">
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="StateAbbr" ColumnName="StateAbbr" />
+          <ScalarProperty Name="State" ColumnName="State" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_ZipCode_City_State_ZipCode_get" FunctionName="tiradoonlineDB.Store.sp_ZipCode_City_State_ZipCode_get">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="tiradoonlineDB.sp_ZipCode_City_State_ZipCode_get_Result">
+          <ScalarProperty Name="ZipCodeID" ColumnName="ZipCodeID" />
+          <ScalarProperty Name="Zipcode" ColumnName="Zipcode" />
+          <ScalarProperty Name="ZipCodeTypeID" ColumnName="ZipCodeTypeID" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="LocationType" ColumnName="LocationType" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="Long" ColumnName="Long" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Decommisioned" ColumnName="Decommisioned" />
+          <ScalarProperty Name="TaxReturnsFiled" ColumnName="TaxReturnsFiled" />
+          <ScalarProperty Name="EstimatedPopulation" ColumnName="EstimatedPopulation" />
+          <ScalarProperty Name="TotalWages" ColumnName="TotalWages" />
+          <ScalarProperty Name="State" ColumnName="State" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_ZipCode_State_get" FunctionName="tiradoonlineDB.Store.sp_ZipCode_State_get">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="tiradoonlineDB.sp_ZipCode_State_get_Result">
+          <ScalarProperty Name="ZipCodeID" ColumnName="ZipCodeID" />
+          <ScalarProperty Name="Zipcode" ColumnName="Zipcode" />
+          <ScalarProperty Name="ZipCodeTypeID" ColumnName="ZipCodeTypeID" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="LocationType" ColumnName="LocationType" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="Long" ColumnName="Long" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Decommisioned" ColumnName="Decommisioned" />
+          <ScalarProperty Name="TaxReturnsFiled" ColumnName="TaxReturnsFiled" />
+          <ScalarProperty Name="EstimatedPopulation" ColumnName="EstimatedPopulation" />
+          <ScalarProperty Name="TotalWages" ColumnName="TotalWages" />
+          <ScalarProperty Name="StateID1" ColumnName="StateID1" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="StateAbbr" ColumnName="StateAbbr" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_ZipCode_ZipCode_get" FunctionName="tiradoonlineDB.Store.sp_ZipCode_ZipCode_get">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="tiradoonlineDB.sp_ZipCode_ZipCode_get_Result">
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Zipcode" ColumnName="Zipcode" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
